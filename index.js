@@ -8,15 +8,17 @@ let sumEl = document.querySelector("#sum")
 let cardEl = document.getElementById("cards")
 
 let player = {
-    name: "Player",
+    name: prompt("Enter Your Name"),
     chips: 100
 }
 
-let playerEl = getElementById("player-el")
+let playerEl = document.getElementById("player-el")
 playerEl.textContent = player.name + ": Rs." +player.chips
 
 
 function startGame(){
+    if(player.chips > 0)
+    {
     isAlive = true;
     hasBlackJack = false;
     let firstCard = getRandomCard();
@@ -24,6 +26,11 @@ function startGame(){
     cards = [firstCard, secondCard];
     sum = firstCard + secondCard;
     renderGame()
+    }
+    else
+    {
+        messEl.textContent = "Sorry ! You Don't Have Enough Chips To Play"
+    }
 }
 
 function renderGame(){
@@ -41,11 +48,15 @@ function renderGame(){
         
     } else if (sum === 21) {
         message = "Wohoo! You've got Blackjack! 🥳"
+        player.chips +=25;
+        playerEl.textContent = player.name + ": Rs." +player.chips
         hasBlackJack = true
         
     
     } else {
         message = "You're out of the game! 😭"
+        player.chips -= 25;
+        playerEl.textContent = player.name + ": Rs." +player.chips
         isAlive = false
     }
     

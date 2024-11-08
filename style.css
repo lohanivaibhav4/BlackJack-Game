@@ -6,10 +6,13 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: x-large;
     font-weight: bold;
-    
+    display: flex;
+    justify-content: center;
 }
 h1{
     color: goldenrod;
+    margin-bottom: 70px;
+    text-shadow: 5px 5px 5px red;
 }
 
 button{
@@ -28,8 +31,26 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 50px;
 }
 #game-screen{
-    margin: auto;
-    border: 2px dotted black;   
+    
+    border: 3px dotted black;   
+    width: 600px;
+    height : 80vh;
+    border-radius: 10px;
+    margin-top: 60px;
+    
+}
+#score-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px dotted black;
+    border-radius: 10px;
+    width: 300px;
+    padding-left: 20px;
+    border-left: none;
+    margin-top: 60px;
 }
